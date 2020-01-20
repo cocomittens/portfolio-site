@@ -5,22 +5,22 @@ import {
 
 const data = [
   {
-    subject: 'Math', A: 120, B: 110, fullMark: 150,
+    skill: 'React',  level: 90,
   },
   {
-    subject: 'Chinese', A: 98, B: 130, fullMark: 150,
+    skill: 'HTML', level: 98,
   },
   {
-    subject: 'English', A: 86, B: 130, fullMark: 150,
+    skill: 'CSS', level: 86,
   },
   {
-    subject: 'Geography', A: 99, B: 100, fullMark: 150,
+    skill: 'Redux', level: 99,
   },
   {
-    subject: 'Physics', A: 85, B: 90, fullMark: 150,
+    skill: 'Node', level:  85
   },
   {
-    subject: 'History', A: 65, B: 85, fullMark: 150,
+    skill: 'UI/UX', level:  65
   },
 ];
 
@@ -29,10 +29,10 @@ export default class Example extends PureComponent {
     return (
       <RadarChart cx={300} cy={250} outerRadius={150} width={500} height={500} data={data}>
         <PolarGrid />
-        <PolarAngleAxis dataKey="subject" />
+        <PolarAngleAxis dataKey="skill" />
         <PolarRadiusAxis />
         <Tooltip></Tooltip>
-        <Radar name="Mike" dataKey="A" stroke="#fff" fill="#2773e1" fillOpacity={0.6} />
+        <Radar name="Skills" dataKey="level" stroke="#fff" fill="#2773e1" fillOpacity={0.6} />
       </RadarChart>
     );
   }

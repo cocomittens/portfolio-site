@@ -98,7 +98,7 @@ const useStyles = makeStyles(theme => ({
     textShadow: '0 1px 0 #111'
   },
   bgOdd: {
-    backgroundColor: grey[50],
+    backgroundColor: grey[300],
     paddingBottom: theme.spacing(5)
   },
   bgEven: {
@@ -161,10 +161,10 @@ export default function Dashboard() {
                  free to contact me about any type of opportunity, I'm open minded to pretty much anything.</Typography>
               <Typography variant="body1"><b>Email:</b> corriestoddard@gmail.com</Typography>
                   <Typography variant="body1"><b>Phone:</b> 657-200-8701</Typography>
-                  <TextField margin="dense" fullWidth id="name" variant="outlined" defaultValue="Name"></TextField>
-                  <TextField margin="dense" fullWidth variant="outlined" defaultValue="Email"></TextField>
-                  <TextField margin="dense" fullWidth variant="outlined" defaultValue="Subject"></TextField>
-                  <TextField margin="dense" rows={5} fullWidth variant="outlined" multiline={true} defaultValue="Message"></TextField>
+                  <TextField margin="dense" fullWidth id="name" variant="outlined" placeholder="Name"></TextField>
+                  <TextField margin="dense" fullWidth variant="outlined" placeholder="Email"></TextField>
+                  <TextField margin="dense" fullWidth variant="outlined" placeholder="Subject"></TextField>
+                  <TextField margin="dense" rows={5} fullWidth variant="outlined" multiline={true} placeholder="Message"></TextField>
                 <Button className={classes.submit} color="secondary" size="large" variant="contained">Submit</Button>
               </Grid>
             </Grid>
