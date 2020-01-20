@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
-  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip
 } from 'recharts';
 
 const data = [
@@ -31,6 +31,7 @@ export default class Example extends PureComponent {
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" />
         <PolarRadiusAxis />
+        <Tooltip></Tooltip>
         <Radar name="Mike" dataKey="A" stroke="#fff" fill="#2773e1" fillOpacity={0.6} />
       </RadarChart>
     );
