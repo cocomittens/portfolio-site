@@ -1,0 +1,67 @@
+import React from "react";
+
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+
+export default function Contact(props) {
+  const { contactForm, submit, bgOdd } = props;
+
+  return (
+    <Grid container item xs={12} className={bgOdd} justify="center">
+      <Grid item xs={8}>
+        <Typography variant="h2">Contact</Typography>
+        <Typography variant="body1">
+          Feel free to contact me about any type of opportunity, I'm open minded
+          to pretty much anything.
+        </Typography>
+        <Typography variant="body1">
+          <b>Email:</b> corriestoddard@gmail.com
+        </Typography>
+        <Typography variant="body1">
+          <b>Phone:</b> 657-200-8701
+        </Typography>
+        <TextField
+          className={contactForm}
+          margin="dense"
+          fullWidth
+          id="name"
+          variant="outlined"
+          placeholder="Name"
+        ></TextField>
+        <TextField
+          className={contactForm}
+          margin="dense"
+          fullWidth
+          variant="outlined"
+          placeholder="Email"
+        ></TextField>
+        <TextField
+          className={contactForm}
+          margin="dense"
+          fullWidth
+          variant="outlined"
+          placeholder="Subject"
+        ></TextField>
+        <TextField
+          className={contactForm}
+          margin="dense"
+          rows={5}
+          fullWidth
+          variant="outlined"
+          multiline={true}
+          placeholder="Message"
+        ></TextField>
+        <Button
+          className={submit}
+          color="secondary"
+          size="large"
+          variant="contained"
+        >
+          Submit
+        </Button>
+      </Grid>
+    </Grid>
+  );
+}

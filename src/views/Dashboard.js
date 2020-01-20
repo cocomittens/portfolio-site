@@ -2,54 +2,49 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import Box from "@material-ui/core/Box";
 import AppBar from "@material-ui/core/AppBar";
-import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
-import Button from "@material-ui/core/Button";
 
 import background from "../images/bg_colorful.jpg";
-import item1 from "../images/1.png";
-import item2 from "../images/2.png";
-import item3 from "../images/3.png";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-import grey from '@material-ui/core/colors/grey';
+import grey from "@material-ui/core/colors/grey";
 
-import About from './About';
+import Intro from './Intro';
+import About from "./About";
+import Portfolio from "./Portfolio";
+import Contact from "./Contact";
 
 const theme = createMuiTheme({
   palette: {
-    secondary: { main: '#2773e1' },
-    primary: { main: '#123069' }
+    secondary: { main: "#2773e1" },
+    primary: { main: "#123069" }
   },
   typography: {
     h1: {
-      fontFamily: 'merriweather',
-      
+      fontFamily: "merriweather"
     },
     h2: {
-      fontFamily: 'merriweather',
-      textDecoration: 'underline',
-      textUnderlinePosition: 'under',
-      paddingTop: '30px',
-      paddingBottom: '30px'
+      fontFamily: "merriweather",
+      textDecoration: "underline",
+      textUnderlinePosition: "under",
+      paddingTop: "30px",
+      paddingBottom: "30px"
     },
     h3: {
-      fontFamily: 'montserrat'
+      fontFamily: "montserrat"
     },
     h4: {
-      fontFamily: 'merriweather',
-      fontWeight: 'bold',
-      paddingTop: '12px',
-
+      fontFamily: "merriweather",
+      fontWeight: "bold",
+      paddingTop: "12px"
     },
     body1: {
-      fontFamily: 'montserrat'
+      fontFamily: "montserrat"
     }
   }
 });
@@ -90,12 +85,12 @@ const useStyles = makeStyles(theme => ({
     height: theme.spacing(35)
   },
   nameText: {
-    height: '100vh',
-    width: '100vw',
+    height: "100vh",
+    width: "100vw",
     backgroundImage: `url(${background})`,
-    objectFit: 'cover',
-    color: '#efefef',
-    textShadow: '0 1px 0 #111'
+    objectFit: "cover",
+    color: "#efefef",
+    textShadow: "0 1px 0 #111"
   },
   bgOdd: {
     backgroundColor: grey[300],
@@ -106,12 +101,15 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(5)
   },
   img: {
-    objectFit: 'cover',
-    height: '300px',
-    width: '400px'
+    objectFit: "cover",
+    height: "300px",
+    width: "400px"
   },
   submit: {
-    marginTop: '20px'
+    marginTop: "20px"
+  },
+  contactForm: {
+    background: "#fff"
   }
 }));
 
@@ -122,58 +120,27 @@ export default function Dashboard() {
     <ThemeProvider theme={theme} className={classes.root}>
       <CssBaseline />
       <AppBar position="absolute" className={classes.appBar}></AppBar>
-        <Container className={classes.content}>
-          <Grid container justify="center">
-            <Grid container item xs={12} className={classes.nameText} alignContent="center" justify="center">
-              <Grid item xs={12}>
-              <Typography variant="h1">Corrie Stoddard</Typography></Grid>
-              <Grid item xs={12}>
-              <Typography variant="h3">Web Developer</Typography></Grid>
-            </Grid>
+      <Container className={classes.content}>
+        <Grid container justify="center">
+          <Intro nameText={classes.nameText} />
 
-          <About
+          <About bgOdd={classes.bgOdd} picStyles={classes.pic} />
+
+          <Portfolio imgStyles={classes.img} bgEven={classes.bgEven} />
+
+          <Contact
+            contactForm={classes.contactForm}
+            submit={classes.submit}
             bgOdd={classes.bgOdd}
-            picStyles={classes.pic}
           />
-          
+        </Grid>
 
-            <Grid item xs={12} className={classes.bgEven}>
-                <Typography variant="h2">
-                  Portfolio
-                </Typography>
-                <Grid container justify="center">
-                  <Grid item>
-                    <Link href="https://codepen.io/ioqren/full/mVVXBZ"><img src={item1} className={classes.img}></img></Link>
-                  </Grid>
-                  <Grid item>
-                    <Link href="https://codepen.io/ioqren/full/mAXWwO"><img src={item2} className={classes.img}></img></Link>
-                  </Grid>
-                  <Grid item>
-                  <Link href="https://codepen.io/ioqren/full/wMwQNa"><img src={item3} className={classes.img}></img></Link>
-                  </Grid>
-                </Grid>
-     
-            </Grid>
-            <Grid container item xs={12} className={classes.bgOdd} justify="center">
-              <Grid item xs={8}>
-              <Typography variant="h2">Contact</Typography>
-                <Typography variant="body1">Feel 
-                 free to contact me about any type of opportunity, I'm open minded to pretty much anything.</Typography>
-              <Typography variant="body1"><b>Email:</b> corriestoddard@gmail.com</Typography>
-                  <Typography variant="body1"><b>Phone:</b> 657-200-8701</Typography>
-                  <TextField margin="dense" fullWidth id="name" variant="outlined" placeholder="Name"></TextField>
-                  <TextField margin="dense" fullWidth variant="outlined" placeholder="Email"></TextField>
-                  <TextField margin="dense" fullWidth variant="outlined" placeholder="Subject"></TextField>
-                  <TextField margin="dense" rows={5} fullWidth variant="outlined" multiline={true} placeholder="Message"></TextField>
-                <Button className={classes.submit} color="secondary" size="large" variant="contained">Submit</Button>
-              </Grid>
-            </Grid>
-          </Grid>
-
-          <Box pt={4}>
+        <Grid container justify="center">
+          <Grid item>
             <Copyright />
-          </Box>
-        </Container>
+          </Grid>
+        </Grid>
+      </Container>
     </ThemeProvider>
   );
 }
