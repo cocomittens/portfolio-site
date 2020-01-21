@@ -17,6 +17,11 @@ import Intro from "./Intro";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
+// Icons
+import FacebookIcon from "@material-ui/icons/Facebook";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import PhoneIcon from "@material-ui/icons/Phone";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const theme = createMuiTheme({
   palette: {
@@ -64,15 +69,6 @@ const theme = createMuiTheme({
   }
 });
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      Corrie Stoddard {new Date().getFullYear()}
-    </Typography>
-  );
-}
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
@@ -92,8 +88,8 @@ const useStyles = makeStyles(theme => ({
     overflow: "auto"
   },
   pic: {
-    width: theme.spacing(35),
-    height: theme.spacing(35)
+    width: theme.spacing(30),
+    height: theme.spacing(30)
   },
   nameText: {
     height: "100vh",
@@ -126,8 +122,42 @@ const useStyles = makeStyles(theme => ({
   skillsHeader: {
     position: "relative",
     top: "80px"
-  }
+  },
+  socialMediaIcon: {
+    margin: '30px'
+  },
+  copyrightText: {  
+    marginBottom: '5px'
+  },
+ features: {
+   marginBottom: '50px'
+ }
 }));
+
+
+function Copyright() {
+  const classes = useStyles();
+
+  return (
+    <Grid container justify="center">
+      <Grid container item justify="center">
+        <Grid item>
+          <FacebookIcon className={classes.socialMediaIcon} fontSize="large" />
+          <LinkedInIcon className={classes.socialMediaIcon} fontSize="large" />
+          <PhoneIcon className={classes.socialMediaIcon} fontSize="large" />
+          <GitHubIcon className={classes.socialMediaIcon} fontSize="large" />
+        </Grid>
+      </Grid>
+      <Grid item>
+        <Typography className={classes.copyrightText} variant="body2" color="textSecondary" align="center">
+          {"Copyright © "}
+          Corrie Stoddard {new Date().getFullYear()}
+        </Typography>
+      </Grid>
+    </Grid>
+  );
+}
+
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -144,6 +174,7 @@ export default function Dashboard() {
             bgOdd={classes.bgOdd}
             picStyles={classes.pic}
             skillsHeader={classes.skillsHeader}
+            features={classes.features}
           />
 
           <Portfolio imgStyles={classes.img} bgEven={classes.bgEven} />

@@ -19,12 +19,11 @@ export default function Contact(props) {
           Feel free to contact me about any type of opportunity, I'm open minded
           to pretty much anything.
         </Typography>
-        <Typography variant="body1">
-          <b>Email:</b> corriestoddard@gmail.com
+ 
+        <Typography variant="h4">
+          Send me a message
         </Typography>
-        <Typography variant="body1">
-          <b>Phone:</b> 657-200-8701
-        </Typography>
+   
         <TextField
           className={contactForm}
           margin="dense"
