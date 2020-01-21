@@ -1,28 +1,27 @@
 import React from "react";
+// MUI Styles
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
+// MUI Components
 import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
-
-import background from "../images/bg_colorful.jpg";
-
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-
+// Colors
 import grey from "@material-ui/core/colors/grey";
-
-import Intro from './Intro';
+// Images
+import background from "../images/bg_colorful.jpg";
+// Section Components
+import Intro from "./Intro";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 
 const theme = createMuiTheme({
   palette: {
-    secondary: { main: "#2773e1" },
-    primary: { main: "#123069" }
+    primary: { main: "#2773e1" },
+    secondary: { main: "#4b2fe4" }
   },
   typography: {
     h1: {
@@ -43,8 +42,24 @@ const theme = createMuiTheme({
       fontWeight: "bold",
       paddingTop: "12px"
     },
+    button: {
+      fontWeight: "bold",
+      fontSize: "20px"
+    },
     body1: {
       fontFamily: "montserrat"
+    }
+  },
+  overrides: {
+    MuiButton: {
+      containedSecondary: {
+        backgroundColor: "#ffa101",
+        textShadow: "1px 1px 3px #999 ",
+
+        "&:hover": {
+          backgroundColor: "#ED9600"
+        }
+      }
     }
   }
 });
@@ -53,11 +68,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Corrie Stoddard
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
+      Corrie Stoddard {new Date().getFullYear()}
     </Typography>
   );
 }
@@ -109,7 +120,12 @@ const useStyles = makeStyles(theme => ({
     marginTop: "20px"
   },
   contactForm: {
-    background: "#fff"
+    background: "#fff",
+    borderRadius: "5px"
+  },
+  skillsHeader: {
+    position: "relative",
+    top: "80px"
   }
 }));
 
@@ -124,7 +140,11 @@ export default function Dashboard() {
         <Grid container justify="center">
           <Intro nameText={classes.nameText} />
 
-          <About bgOdd={classes.bgOdd} picStyles={classes.pic} />
+          <About
+            bgOdd={classes.bgOdd}
+            picStyles={classes.pic}
+            skillsHeader={classes.skillsHeader}
+          />
 
           <Portfolio imgStyles={classes.img} bgEven={classes.bgEven} />
 

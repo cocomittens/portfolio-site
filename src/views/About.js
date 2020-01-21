@@ -1,25 +1,36 @@
 import React from "react";
+// MUI Components
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
-
-import Chart from "./Chart";
+// Images
 import pic from "../images/pic.jpg";
+// Timeline Components
 import {
   VerticalTimeline,
   VerticalTimelineElement
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+// Section Components
+import Chart from "./Chart";
+
+import Bounce from 'react-reveal/Bounce';
+import Zoom from 'react-reveal/Zoom';
+import Rotate from 'react-reveal/Rotate';
+
 
 export default function About(props) {
-  const { bgOdd, picStyles } = props;
+  const { bgOdd, picStyles, skillsHeader } = props;
 
   return (
     <Grid id="about" item xs={12} className={bgOdd}>
       <Typography variant="h2">About</Typography>
       <Grid container justify="center" alignItems="center">
-        <Grid container item xs={4} justify="center">
+   
+        <Grid container item xs={5} justify="space-around">
+        <Zoom>
           <Grid item>
+           
             <Avatar src={pic} alt="Corrie Stoddard" className={picStyles} />
           </Grid>
           <Grid item>
@@ -35,11 +46,25 @@ export default function About(props) {
               outdoors, playing with my cats Elliot and Darlene or engaging in
               any of my many hobbies.
             </Typography>
+          
           </Grid>
+          </Zoom>
         </Grid>
-        <Grid item>
+
+        <Grid container item xs={5} justify="center">
+          <Zoom>
+          <Grid item>
+          <Typography variant="h4" className={skillsHeader}>
+            Skills
+          </Typography>
+          </Grid>
+          
+          <Grid item>
           <Chart />
+          </Grid>
+          </Zoom>
         </Grid>
+
       </Grid>
       <Grid item xs={12}>
         <Typography variant="h4">Experience</Typography>

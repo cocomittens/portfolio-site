@@ -1,9 +1,12 @@
 import React from "react";
-
+// MUI Components
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+
+//Icons
+import SendIcon from '@material-ui/icons/Send';
 
 export default function Contact(props) {
   const { contactForm, submit, bgOdd } = props;
@@ -56,10 +59,11 @@ export default function Contact(props) {
         <Button
           className={submit}
           color="secondary"
-          size="large"
+          startIcon={<SendIcon />}
           variant="contained"
         >
-          Submit
+          <Typography variant="button">Submit</Typography>
+          
         </Button>
       </Grid>
     </Grid>

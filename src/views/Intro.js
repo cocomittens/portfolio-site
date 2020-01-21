@@ -1,8 +1,10 @@
 import React from 'react';
-
-import TextField from "@material-ui/core/TextField";
+// MUI Components
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+// Animations
+import Zoom from 'react-reveal/Zoom';
+import Roll from 'react-reveal/Roll';
 
 
 export default function Intro(props) {
@@ -18,10 +20,12 @@ export default function Intro(props) {
         justify="center"
       >
         <Grid item xs={12}>
-          <Typography variant="h1">Corrie Stoddard</Typography>
+          <Zoom>
+          <Typography variant="h1">Corrie Stoddard</Typography></Zoom>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h3">Web Developer</Typography>
+          <Roll left>
+          <Typography variant="h3">Web Developer</Typography></Roll>
         </Grid>
       </Grid>)
 }
