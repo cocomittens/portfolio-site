@@ -20,9 +20,7 @@ export default function Contact(props) {
           to pretty much anything.
         </Typography>
  
-        <Typography variant="h4">
-          Send me a message
-        </Typography>
+      
    
         <TextField
           className={contactForm}

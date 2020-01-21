@@ -11,29 +11,37 @@ import Typography from "@material-ui/core/Typography";
 
 const data = [
   {
-    skill: "React",
+    skill: "React/Redux",
     level: 90
   },
   {
     skill: "HTML",
-    level: 98
+    level: 95
   },
   {
     skill: "CSS",
-    level: 86
+    level: 90
   },
   {
-    skill: "Redux",
-    level: 99
+    skill: "Angular",
+    level: 65
   },
   {
     skill: "Node",
-    level: 85
+    level: 70
   },
   {
     skill: "UI/UX",
-    level: 65
-  }
+    level: 80
+  },
+  {
+    skill: "JavaScript",
+    level: 85
+  },
+  {
+  skill: "Ruby/Rails",
+  level: 75
+}
 ];
 
 export default class Example extends PureComponent {
