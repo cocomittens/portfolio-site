@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import item1 from "../images/1.png";
 import item2 from "../images/2.png";
 import item3 from "../images/3.png";
+import item4 from "../images/4.png";
 // Animations
 import PortfolioItem from "./PortfolioItem";
 
@@ -18,8 +19,8 @@ export default function Portfolio(props) {
 
       <Grid container justify="center">
         <PortfolioItem
-          url="https://codepen.io/ioqren/full/mVVXBZ"
-          img={item1}
+          url="https://pinify-app.herokuapp.com/#/"
+          img={item4}
           imgStyles={imgStyles}
         />
 
@@ -28,9 +29,10 @@ export default function Portfolio(props) {
           img={item2}
           imgStyles={imgStyles}
         />
+   
         <PortfolioItem
-          url="https://codepen.io/ioqren/full/wMwQNa"
-          img={item3}
+          url="https://codepen.io/ioqren/full/mVVXBZ"
+          img={item1}
           imgStyles={imgStyles}
         />
       </Grid>

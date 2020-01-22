@@ -7,7 +7,9 @@ import {
   PolarRadiusAxis,
   Tooltip,
 } from "recharts";
+import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+
 
 const data = [
   {
@@ -44,6 +46,19 @@ const data = [
 }
 ];
 
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active) {
+    return (
+      <Paper className="custom-tooltip">
+        <Typography variant="h6" className="label">{`${label}: ${payload[0].value}`}</Typography>
+        <Typography variant="body1" className="desc">Anything you want can be displayed here.</Typography>
+      </Paper>
+    );
+  }
+
+  return null;
+};
+
 export default class Example extends PureComponent {
   render() {
     return (
@@ -58,7 +73,8 @@ export default class Example extends PureComponent {
         <PolarGrid />
         <PolarAngleAxis dataKey="skill" />
         <PolarRadiusAxis />
-        <Tooltip></Tooltip>
+        <Tooltip content={<CustomTooltip />} />
+
         <Radar
           name="Skills"
           dataKey="level"

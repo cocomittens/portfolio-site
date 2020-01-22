@@ -18,6 +18,8 @@ import Chart from "./Chart";
 import BorderColorTwoToneIcon from "@material-ui/icons/BorderColorTwoTone";
 import FastForwardTwoToneIcon from "@material-ui/icons/FastForwardTwoTone";
 import PaletteTwoToneIcon from "@material-ui/icons/PaletteTwoTone";
+import WorkIcon from '@material-ui/icons/Work';
+import SchoolIcon from '@material-ui/icons/School';
 // Animations
 import Zoom from "react-reveal/Zoom";
 import LightSpeed from "react-reveal/LightSpeed";
@@ -43,14 +45,16 @@ export default function About(props) {
               <FastForwardTwoToneIcon style={{ fontSize: 80 }} />
               <Typography variant="h4">Fast</Typography>
               <Typography variant="body1">
-                My products are pixel perfect. No margin is out of place.
+                I use the latest web development technologies to maximize efficiency in order to
+                 create near-instant loading times.
               </Typography>
             </Grid>
             <Grid item xs={3}>
               <PaletteTwoToneIcon style={{ fontSize: 80 }} />
               <Typography variant="h4">Aesthetic</Typography>
               <Typography variant="body1">
-                My products are pixel perfect. No margin is out of place.
+                My UI/UX design knowledge allows me to utilize design principals to create 
+                intuitive, aesthetically pleasing experiences.
               </Typography>
             </Grid>
           </Grid>
@@ -98,6 +102,7 @@ export default function About(props) {
             className="vertical-timeline-element--work"
             date="2019 - present"
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            icon={<WorkIcon />}
           >
             <h3 className="vertical-timeline-element-title">
               Front End Developer
@@ -111,6 +116,7 @@ export default function About(props) {
             className="vertical-timeline-element--bootcamp"
             date="2019 - 2019"
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            icon={<SchoolIcon />}
           >
             <h3 className="vertical-timeline-element-title">Coding Bootcamp</h3>
             <h4 className="vertical-timeline-element-subtitle">App Academy</h4>
@@ -120,6 +126,7 @@ export default function About(props) {
             className="vertical-timeline-element--college"
             date="2013 - 2018"
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            icon={<SchoolIcon />}
           >
             <h3 className="vertical-timeline-element-title">
               Graduated University - BS Cognitive Science
