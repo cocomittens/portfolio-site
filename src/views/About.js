@@ -15,51 +15,53 @@ import "react-vertical-timeline-component/style.min.css";
 import Chart from "./Chart";
 
 // Icons
-import PhoneIcon from "@material-ui/icons/Phone";
-import BorderColorTwoToneIcon from '@material-ui/icons/BorderColorTwoTone';
-import FastForwardTwoToneIcon from '@material-ui/icons/FastForwardTwoTone';
-import PaletteTwoToneIcon from '@material-ui/icons/PaletteTwoTone';
+import BorderColorTwoToneIcon from "@material-ui/icons/BorderColorTwoTone";
+import FastForwardTwoToneIcon from "@material-ui/icons/FastForwardTwoTone";
+import PaletteTwoToneIcon from "@material-ui/icons/PaletteTwoTone";
 // Animations
 import Zoom from "react-reveal/Zoom";
+import LightSpeed from "react-reveal/LightSpeed";
 
 export default function About(props) {
-  const { bgOdd, picStyles, skillsHeader, features } = props;
+  const { bgOdd, picStyles, skillsHeader, features, chartStyles } = props;
 
   return (
     <Grid id="about" item xs={12} className={bgOdd}>
       <Typography variant="h2">About</Typography>
       <Grid container justify="center" alignItems="center">
-        <Grid container item justify="space-around" className={features}>
-          <Grid item xs={3}>
-            <BorderColorTwoToneIcon style={{ fontSize: 80 }} />
-            <Typography variant="h4">Detail Oriented</Typography>
-            <Typography variant="body1">My products are pixel perfect. No margin is out of place.</Typography>
-
-          </Grid>
-          <Grid item xs={3}>
-            <FastForwardTwoToneIcon  style={{ fontSize: 80 }} />
-            <Typography variant="h4">Fast</Typography>
-            <Typography variant="body1">My products are pixel perfect. No margin is out of place.</Typography>
-
-
-          </Grid>
-          <Grid item xs={3}>
-            <PaletteTwoToneIcon  style={{ fontSize: 80 }} />
-            <Typography variant="h4">Aesthetic</Typography>
-            <Typography variant="body1">My products are pixel perfect. No margin is out of place.</Typography>
-
-
-          </Grid>
-        </Grid>
-        <Grid container item xs={6} justify="space-around" alignItems="center">
-        
-            <Grid item>
-            <Avatar src={pic} alt="Corrie Stoddard" className={picStyles} />
-
+        <LightSpeed left>
+          <Grid container item justify="space-around" className={features}>
+            <Grid item xs={3}>
+              <BorderColorTwoToneIcon style={{ fontSize: 80 }} />
+              <Typography variant="h4">Responsive</Typography>
+              <Typography variant="body1">
+                My products are pixel perfect. My products are designed to handle any screen size,
+                from mobile phones to 4k monitors.
+              </Typography>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={3}>
+              <FastForwardTwoToneIcon style={{ fontSize: 80 }} />
+              <Typography variant="h4">Fast</Typography>
+              <Typography variant="body1">
+                My products are pixel perfect. No margin is out of place.
+              </Typography>
+            </Grid>
+            <Grid item xs={3}>
+              <PaletteTwoToneIcon style={{ fontSize: 80 }} />
+              <Typography variant="h4">Aesthetic</Typography>
+              <Typography variant="body1">
+                My products are pixel perfect. No margin is out of place.
+              </Typography>
+            </Grid>
+          </Grid>
+        </LightSpeed>
+        <Grid container item xs={6} justify="space-around" alignItems="center">
+          <Grid item>
+            <Avatar src={pic} alt="Corrie Stoddard" className={picStyles} />
+          </Grid>
+          <Grid item xs={6}>
             <Zoom>
-            <Typography variant="h4">Bio</Typography>
+              <Typography variant="h4">Bio</Typography>
 
               <Typography variant="body1">
                 Hello! I'm a web developer based in Orange County, California.
@@ -71,9 +73,8 @@ export default function About(props) {
                 outdoors, playing with my cats Elliot and Darlene or engaging in
                 any of my many hobbies.
               </Typography>
-              </Zoom>
-            </Grid>
-       
+            </Zoom>
+          </Grid>
         </Grid>
 
         <Grid container item xs={5} justify="center">
@@ -84,7 +85,7 @@ export default function About(props) {
               </Typography>
             </Grid>
 
-            <Grid item>
+            <Grid item className={chartStyles}>
               <Chart />
             </Grid>
           </Zoom>

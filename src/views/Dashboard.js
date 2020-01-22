@@ -121,19 +121,25 @@ const useStyles = makeStyles(theme => ({
   },
   skillsHeader: {
     position: "relative",
-    top: "80px"
+    top: "50px"
   },
   socialMediaIcon: {
-    margin: '30px'
+    margin: "30px",
+    "&:hover": {
+      color: theme.palette.primary.main
+    }
   },
-  copyrightText: {  
-    marginBottom: '5px'
+  copyrightText: {
+    marginBottom: "5px"
   },
- features: {
-   marginBottom: '50px'
- }
+  features: {
+    marginBottom: "50px"
+  },
+  chartStyles: {
+    position: "relative",
+    top: "-30px"
+  }
 }));
-
 
 function Copyright() {
   const classes = useStyles();
@@ -149,7 +155,12 @@ function Copyright() {
         </Grid>
       </Grid>
       <Grid item>
-        <Typography className={classes.copyrightText} variant="body2" color="textSecondary" align="center">
+        <Typography
+          className={classes.copyrightText}
+          variant="body2"
+          color="textSecondary"
+          align="center"
+        >
           {"Copyright © "}
           Corrie Stoddard {new Date().getFullYear()}
         </Typography>
@@ -157,7 +168,6 @@ function Copyright() {
     </Grid>
   );
 }
-
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -175,6 +185,7 @@ export default function Dashboard() {
             picStyles={classes.pic}
             skillsHeader={classes.skillsHeader}
             features={classes.features}
+            chartStyles={classes.chartStyles}
           />
 
           <Portfolio imgStyles={classes.img} bgEven={classes.bgEven} />

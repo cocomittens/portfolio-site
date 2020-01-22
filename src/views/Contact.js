@@ -6,7 +6,11 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 //Icons
-import SendIcon from '@material-ui/icons/Send';
+import SendIcon from "@material-ui/icons/Send";
+
+import Pulse from "react-reveal/Pulse";
+
+import Rotate from "react-reveal/Rotate";
 
 export default function Contact(props) {
   const { contactForm, submit, bgOdd } = props;
@@ -19,9 +23,7 @@ export default function Contact(props) {
           Feel free to contact me about any type of opportunity, I'm open minded
           to pretty much anything.
         </Typography>
- 
-      
-   
+<Pulse>
         <TextField
           className={contactForm}
           margin="dense"
@@ -53,6 +55,8 @@ export default function Contact(props) {
           multiline={true}
           placeholder="Message"
         ></TextField>
+        </Pulse>
+        <Rotate bottom right>
         <Button
           className={submit}
           color="secondary"
@@ -60,8 +64,8 @@ export default function Contact(props) {
           variant="contained"
         >
           <Typography variant="button">Submit</Typography>
-          
         </Button>
+        </Rotate>
       </Grid>
     </Grid>
   );
