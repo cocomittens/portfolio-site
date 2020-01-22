@@ -18,11 +18,12 @@ import Chart from "./Chart";
 import BorderColorTwoToneIcon from "@material-ui/icons/BorderColorTwoTone";
 import FastForwardTwoToneIcon from "@material-ui/icons/FastForwardTwoTone";
 import PaletteTwoToneIcon from "@material-ui/icons/PaletteTwoTone";
-import WorkIcon from '@material-ui/icons/Work';
-import SchoolIcon from '@material-ui/icons/School';
+import WorkIcon from "@material-ui/icons/Work";
+import SchoolIcon from "@material-ui/icons/School";
 // Animations
 import Zoom from "react-reveal/Zoom";
 import LightSpeed from "react-reveal/LightSpeed";
+import Fade from "react-reveal/Fade";
 
 export default function About(props) {
   const { bgOdd, picStyles, skillsHeader, features, chartStyles } = props;
@@ -37,31 +38,33 @@ export default function About(props) {
               <BorderColorTwoToneIcon style={{ fontSize: 80 }} />
               <Typography variant="h4">Responsive</Typography>
               <Typography variant="body1">
-                My products are pixel perfect. My products are designed to handle any screen size,
-                from mobile phones to 4k monitors.
+                My products are pixel perfect. My products are designed to
+                handle any screen size, from mobile phones to 4k monitors.
               </Typography>
             </Grid>
             <Grid item xs={3}>
               <FastForwardTwoToneIcon style={{ fontSize: 80 }} />
               <Typography variant="h4">Fast</Typography>
               <Typography variant="body1">
-                I use the latest web development technologies to maximize efficiency in order to
-                 create near-instant loading times.
+                I use the latest web development technologies to maximize
+                efficiency in order to create near-instant loading times.
               </Typography>
             </Grid>
             <Grid item xs={3}>
               <PaletteTwoToneIcon style={{ fontSize: 80 }} />
               <Typography variant="h4">Aesthetic</Typography>
               <Typography variant="body1">
-                My UI/UX design knowledge allows me to utilize design principals to create 
-                intuitive, aesthetically pleasing experiences.
+                My UI/UX design knowledge allows me to utilize design principals
+                to create intuitive, aesthetically pleasing experiences.
               </Typography>
             </Grid>
           </Grid>
         </LightSpeed>
         <Grid container item xs={6} justify="space-around" alignItems="center">
           <Grid item>
-            <Avatar src={pic} alt="Corrie Stoddard" className={picStyles} />
+            <Fade left>
+              <Avatar src={pic} alt="Corrie Stoddard" className={picStyles} />
+            </Fade>
           </Grid>
           <Grid item xs={6}>
             <Zoom>
