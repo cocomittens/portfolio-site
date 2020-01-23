@@ -20,14 +20,14 @@ export default function About(props) {
     <Grid id="about" item xs={12} className={bgOdd}>
       <Typography variant="h2">About</Typography>
       <Grid container justify="center" alignItems="center">
-        <LightSpeed left>
+      <LightSpeed left>
           <Features features={features} />
         </LightSpeed>
         <Bio picStyles={picStyles} pic={pic} />
+        <Chart skillsHeader={skillsHeader} chartStyles={chartStyles} />
 
         
-              <Chart skillsHeader={skillsHeader} />
-      
+          
         <Experience />
       </Grid>
     </Grid>

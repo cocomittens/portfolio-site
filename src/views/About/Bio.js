@@ -11,7 +11,7 @@ export default function Experience(props) {
 
   return (
     <Grid container item xs={8} justify="space-around" alignItems="center">
-      <Grid item>
+     <Grid item>
         <Zoom>
         <Avatar src={pic} alt="Corrie Stoddard" className={picStyles} /></Zoom>
       </Grid>
@@ -38,6 +38,7 @@ export default function Experience(props) {
           </Grid>
      
       </Grid>
+     
     </Grid>
   );
 }

@@ -93,12 +93,12 @@ function Chart() {
 };
 
 export default function Skills(props) {
-    const { skillsHeader } = props;
+    const { skillsHeader, chartStyles } = props;
 
     return (
-      <Grid container item xs={5} justify="center">
+      <Grid container item xs={5} justify="center" className={chartStyles}>
         <Zoom>
-          <Grid item>
+          <Grid item >
             <Typography variant="h4" className={skillsHeader}>Skills</Typography>
           </Grid>
 
