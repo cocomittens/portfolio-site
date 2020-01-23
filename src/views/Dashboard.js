@@ -59,6 +59,15 @@ const theme = createMuiTheme({
         "&:hover": {
           backgroundColor: "#ED9600"
         }
+      },
+      outlinedPrimary: {
+        marginTop: "20px",
+        backgroundColor: "#fff",
+        opacity: 0.7,
+        "&:hover": {
+          backgroundColor: "#fff",
+          opacity: 0.9
+        }
       }
     }
   }
@@ -137,11 +146,7 @@ const useStyles = makeStyles(theme => ({
   bio: {
     display: "block"
   },
-  actionButton: {
-    marginTop: "30px",
-    backgroundColor: "#fff",
-    opacity: 0.7
-  }
+  actionButton: {}
 }));
 
 export default function Dashboard() {
@@ -154,11 +159,13 @@ export default function Dashboard() {
       <Container className={classes.content}>
         <Grid container justify="center">
           <Intro
+            id="intro"
             actionButton={classes.actionButton}
             nameText={classes.nameText}
           />
 
           <About
+            id="about"
             bgOdd={classes.bgOdd}
             picStyles={classes.pic}
             skillsHeader={classes.skillsHeader}
@@ -167,9 +174,14 @@ export default function Dashboard() {
             bio={classes.bio}
           />
 
-          <Portfolio imgStyles={classes.img} bgEven={classes.bgEven} />
+          <Portfolio
+            id="portfolio"
+            imgStyles={classes.img}
+            bgEven={classes.bgEven}
+          />
 
           <Contact
+            id="contact"
             contactForm={classes.contactForm}
             submit={classes.submit}
             bgOdd={classes.bgOdd}

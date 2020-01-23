@@ -1,11 +1,14 @@
 import React from "react";
+
 // MUI Components
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+
 // Animations
 import Zoom from "react-reveal/Zoom";
 import Roll from "react-reveal/Roll";
+import Rotate from "react-reveal/Rotate";
 
 export default function Intro(props) {
   const { nameText, actionButton } = props;
@@ -18,7 +21,7 @@ export default function Intro(props) {
       className={nameText}
       alignContent="center"
       justify="center"
-    > 
+    >
       <Grid item xs={12}>
         <Zoom>
           <Typography variant="h1">Corrie Stoddard</Typography>
@@ -30,9 +33,11 @@ export default function Intro(props) {
         </Roll>
       </Grid>
       <Grid item xs={12}>
-        <Roll left>
-          <Button className={actionButton} variant="outlined">See My Work</Button>
-        </Roll>
+        <Rotate bottom right>
+          <Button className={actionButton} variant="outlined" color="primary">
+            See My Work
+          </Button>
+        </Rotate>
       </Grid>
     </Grid>
   );
