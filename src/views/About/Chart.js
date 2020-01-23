@@ -9,6 +9,9 @@ import {
 } from "recharts";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+
+import Zoom from "react-reveal/Zoom";
 
 const data = [
   {
@@ -63,30 +66,47 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-export default class Example extends PureComponent {
-  render() {
-    return (
-      <RadarChart
-        cx={300}
-        cy={250}
-        outerRadius={150}
-        width={600}
-        height={420}
-        data={data}
-      >
-        <PolarGrid />
-        <PolarAngleAxis dataKey="skill" />
-        <PolarRadiusAxis />
-        <Tooltip content={<CustomTooltip />} />
+function Chart() {
+  return (
+    <RadarChart
+      cx={300}
+      cy={250}
+      outerRadius={150}
+      width={600}
+      height={420}
+      data={data}
+    >
+      <PolarGrid />
+      <PolarAngleAxis dataKey="skill" />
+      <PolarRadiusAxis />
+      <Tooltip content={<CustomTooltip />} />
 
-        <Radar
-          name="Skills"
-          dataKey="level"
-          stroke="#fff"
-          fill="#2773e1"
-          fillOpacity={0.6}
-        />
-      </RadarChart>
+      <Radar
+        name="Skills"
+        dataKey="level"
+        stroke="#fff"
+        fill="#2773e1"
+        fillOpacity={0.6}
+      />
+    </RadarChart>
+  );
+};
+
+export default function Skills(props) {
+    const { skillsHeader } = props;
+
+    return (
+      <Grid container item xs={5} justify="center">
+        <Zoom>
+          <Grid item>
+            <Typography variant="h4" className={skillsHeader}>Skills</Typography>
+          </Grid>
+
+          <Grid item>
+            <Chart />
+          </Grid>
+        </Zoom>
+      </Grid>
     );
-  }
+  
 }

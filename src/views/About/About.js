@@ -11,7 +11,6 @@ import Bio from './Bio';
 import Experience from './Experience';
 
 // Animations
-import Zoom from "react-reveal/Zoom";
 import LightSpeed from "react-reveal/LightSpeed";
 
 export default function About(props) {
@@ -26,19 +25,9 @@ export default function About(props) {
         </LightSpeed>
         <Bio picStyles={picStyles} pic={pic} />
 
-        <Grid container item xs={5} justify="center">
-          <Zoom>
-            <Grid item>
-              <Typography variant="h4" className={skillsHeader}>
-                Skills
-              </Typography>
-            </Grid>
-
-            <Grid item className={chartStyles}>
-              <Chart />
-            </Grid>
-          </Zoom>
-        </Grid>
+        
+              <Chart skillsHeader={skillsHeader} />
+      
         <Experience />
       </Grid>
     </Grid>

@@ -116,7 +116,7 @@ const useStyles = makeStyles(theme => ({
   },
   skillsHeader: {
     position: "relative",
-    top: "50px"
+    top: "75px"
   },
   socialMediaIcon: {
     margin: "30px",
