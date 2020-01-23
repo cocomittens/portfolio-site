@@ -1,12 +1,10 @@
 import React from "react";
 // MUI Components
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 // Portfolio Items
 import item1 from "../images/1.png";
 import item2 from "../images/2.png";
-import item3 from "../images/3.png";
 import item4 from "../images/4.png";
 // Animations
 import PortfolioItem from "./PortfolioItem";
@@ -29,7 +27,7 @@ export default function Portfolio(props) {
           img={item2}
           imgStyles={imgStyles}
         />
-   
+
         <PortfolioItem
           url="https://codepen.io/ioqren/full/mVVXBZ"
           img={item1}

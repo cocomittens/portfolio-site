@@ -4,7 +4,6 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 // MUI Components
-import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -17,6 +16,7 @@ import Intro from "./Intro";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
+import NavBar from "./NavBar";
 // Icons
 import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -138,7 +138,15 @@ const useStyles = makeStyles(theme => ({
   chartStyles: {
     position: "relative",
     top: "-30px"
-  }
+  },
+  bio: {
+    display: "block"
+  },
+  actionButton: {
+    marginTop: '30px',
+    backgroundColor: '#fff',
+    opacity: .7
+  },
 }));
 
 function Copyright() {
@@ -175,10 +183,10 @@ export default function Dashboard() {
   return (
     <ThemeProvider theme={theme} className={classes.root}>
       <CssBaseline />
-      <AppBar position="absolute" className={classes.appBar}></AppBar>
+      <NavBar />
       <Container className={classes.content}>
         <Grid container justify="center">
-          <Intro nameText={classes.nameText} />
+          <Intro actionButton={classes.actionButton} nameText={classes.nameText} />
 
           <About
             bgOdd={classes.bgOdd}
@@ -186,6 +194,7 @@ export default function Dashboard() {
             skillsHeader={classes.skillsHeader}
             features={classes.features}
             chartStyles={classes.chartStyles}
+            bio={classes.bio}
           />
 
           <Portfolio imgStyles={classes.img} bgEven={classes.bgEven} />

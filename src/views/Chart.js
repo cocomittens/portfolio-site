@@ -5,11 +5,10 @@ import {
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis,
-  Tooltip,
+  Tooltip
 } from "recharts";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-
 
 const data = [
   {
@@ -41,17 +40,22 @@ const data = [
     level: 85
   },
   {
-  skill: "Ruby/Rails",
-  level: 75
-}
+    skill: "Ruby/Rails",
+    level: 75
+  }
 ];
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active) {
     return (
       <Paper className="custom-tooltip">
-        <Typography variant="h6" className="label">{`${label}: ${payload[0].value}`}</Typography>
-        <Typography variant="body1" className="desc">Anything you want can be displayed here.</Typography>
+        <Typography
+          variant="h6"
+          className="label"
+        >{`${label}: ${payload[0].value}`}</Typography>
+        <Typography variant="body1" className="desc">
+          Anything you want can be displayed here.
+        </Typography>
       </Paper>
     );
   }
