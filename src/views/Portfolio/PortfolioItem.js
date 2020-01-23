@@ -12,7 +12,7 @@ export default function PortfolioItem(props) {
     <Grid item>
       <Bounce>
         <Link href={url}>
-          <img src={img} className={imgStyles}></img>
+          <img src={img} className={imgStyles} alt="portfolio item"></img>
         </Link>
       </Bounce>
     </Grid>

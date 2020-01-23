@@ -4,7 +4,6 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 // MUI Components
-import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 // Colors
@@ -12,16 +11,12 @@ import grey from "@material-ui/core/colors/grey";
 // Images
 import background from "../images/bg_colorful.jpg";
 // Section Components
-import Intro from "./Intro";
-import About from "./About";
-import Portfolio from "./Portfolio";
-import Contact from "./Contact";
-import NavBar from "./NavBar";
-// Icons
-import FacebookIcon from "@material-ui/icons/Facebook";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import PhoneIcon from "@material-ui/icons/Phone";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import Intro from "./Intro/Intro";
+import About from "./About/About";
+import Portfolio from "./Portfolio/Portfolio";
+import Contact from "./Contact/Contact";
+import NavBar from "./Intro/NavBar";
+import Footer from "./Contact/Footer";
 
 const theme = createMuiTheme({
   palette: {
@@ -143,39 +138,11 @@ const useStyles = makeStyles(theme => ({
     display: "block"
   },
   actionButton: {
-    marginTop: '30px',
-    backgroundColor: '#fff',
-    opacity: .7
-  },
+    marginTop: "30px",
+    backgroundColor: "#fff",
+    opacity: 0.7
+  }
 }));
-
-function Copyright() {
-  const classes = useStyles();
-
-  return (
-    <Grid container justify="center">
-      <Grid container item justify="center">
-        <Grid item>
-          <FacebookIcon className={classes.socialMediaIcon} fontSize="large" />
-          <LinkedInIcon className={classes.socialMediaIcon} fontSize="large" />
-          <PhoneIcon className={classes.socialMediaIcon} fontSize="large" />
-          <GitHubIcon className={classes.socialMediaIcon} fontSize="large" />
-        </Grid>
-      </Grid>
-      <Grid item>
-        <Typography
-          className={classes.copyrightText}
-          variant="body2"
-          color="textSecondary"
-          align="center"
-        >
-          {"Copyright © "}
-          Corrie Stoddard {new Date().getFullYear()}
-        </Typography>
-      </Grid>
-    </Grid>
-  );
-}
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -183,10 +150,13 @@ export default function Dashboard() {
   return (
     <ThemeProvider theme={theme} className={classes.root}>
       <CssBaseline />
-      <NavBar />
+      <NavBar appBar={classes.appBar} />
       <Container className={classes.content}>
         <Grid container justify="center">
-          <Intro actionButton={classes.actionButton} nameText={classes.nameText} />
+          <Intro
+            actionButton={classes.actionButton}
+            nameText={classes.nameText}
+          />
 
           <About
             bgOdd={classes.bgOdd}
@@ -208,7 +178,10 @@ export default function Dashboard() {
 
         <Grid container justify="center">
           <Grid item>
-            <Copyright />
+            <Footer
+              socialMediaIcon={classes.socialMediaIcon}
+              copyrightText={classes.copyrightText}
+            />
           </Grid>
         </Grid>
       </Container>

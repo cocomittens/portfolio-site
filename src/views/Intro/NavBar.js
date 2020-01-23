@@ -6,8 +6,9 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
 export default function NavBar(props) {
+  const { appBar } = props;
   return (
-    <AppBar position="sticky">
+    <AppBar className={appBar}>
       <Toolbar variant="dense">
         <Tabs>
           <Tab label="About"></Tab>
