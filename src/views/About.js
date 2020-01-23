@@ -25,7 +25,7 @@ import Zoom from "react-reveal/Zoom";
 import LightSpeed from "react-reveal/LightSpeed";
 
 export default function About(props) {
-  const { bgOdd, picStyles, skillsHeader, features, chartStyles, bio } = props;
+  const { bgOdd, picStyles, skillsHeader, features, chartStyles } = props;
 
   return (
     <Grid id="about" item xs={12} className={bgOdd}>
@@ -33,7 +33,7 @@ export default function About(props) {
       <Grid container justify="center" alignItems="center">
         <LightSpeed left>
           <Grid container item justify="space-around" className={features}>
-            <Grid item xs={3}>
+            <Grid item xs={12} md={6} lg={3}>
               <BorderColorTwoToneIcon style={{ fontSize: 80 }} />
               <Typography variant="h4">Responsive</Typography>
               <Typography variant="body1">
@@ -41,7 +41,7 @@ export default function About(props) {
                 from mobile phones to 4k monitors.
               </Typography>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={12} md={6} lg={3}>
               <FastForwardTwoToneIcon style={{ fontSize: 80 }} />
               <Typography variant="h4">Fast</Typography>
               <Typography variant="body1">
@@ -49,7 +49,7 @@ export default function About(props) {
                  create near-instant loading times.
               </Typography>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={12} md={6} lg={3}>
               <PaletteTwoToneIcon style={{ fontSize: 80 }} />
               <Typography variant="h4">Aesthetic</Typography>
               <Typography variant="body1">
@@ -116,7 +116,7 @@ export default function About(props) {
             className="vertical-timeline-element--bootcamp"
             date="2019 - 2019"
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-            icon={<WorkIcon />}
+            icon={<SchoolIcon />}
           >
             <h3 className="vertical-timeline-element-title">Coding Bootcamp</h3>
             <h4 className="vertical-timeline-element-subtitle">App Academy</h4>
@@ -126,7 +126,7 @@ export default function About(props) {
             className="vertical-timeline-element--college"
             date="2013 - 2018"
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-            icon={<WorkIcon />}
+            icon={<SchoolIcon />}
           >
             <h3 className="vertical-timeline-element-title">
               Graduated University - BS Cognitive Science
