@@ -1,8 +1,10 @@
 import React from "react";
+
 // MUI Styles
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+
 // MUI Components
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -44,18 +46,28 @@ const theme = createMuiTheme({
     },
     button: {
       fontWeight: "bold",
-      fontSize: "20px"
+      fontSize: "20px",
+      
     },
     body1: {
       fontFamily: "montserrat"
     }
   },
   overrides: {
+    MuiTabs: {
+      indicator: {
+        color: '#fff'
+      }
+    },
+    MuiTab: {
+      textColorPrimary: {
+        color: '#fff'
+      }
+    },
     MuiButton: {
       containedSecondary: {
         backgroundColor: "#ffa101",
         textShadow: "1px 1px 3px #999 ",
-
         "&:hover": {
           backgroundColor: "#ED9600"
         }
@@ -82,8 +94,7 @@ const useStyles = makeStyles(theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
     }),
-    background: "transparent",
-    boxShadow: "none"
+  
   },
   content: {
     padding: 0,
@@ -93,7 +104,8 @@ const useStyles = makeStyles(theme => ({
   },
   pic: {
     width: theme.spacing(30),
-    height: theme.spacing(30)
+    height: theme.spacing(30),
+   
   },
   nameText: {
     height: "100vh",
@@ -117,7 +129,20 @@ const useStyles = makeStyles(theme => ({
     width: "400px"
   },
   submit: {
-    marginTop: "20px"
+    marginTop: "20px",
+    backgroundColor: theme.palette.secondary.main,
+    color: '#fff',
+    "&:hover": {
+      backgroundColor: theme.palette.secondary.main
+    }
+  },
+  actionButton: {
+    marginTop: "20px",
+    backgroundColor: '#ff9800',
+    color: '#ff11f',
+    "&:hover": {
+      backgroundColor: '#ff9800',
+    }
   },
   contactForm: {
     background: "#fff",
@@ -130,7 +155,7 @@ const useStyles = makeStyles(theme => ({
   socialMediaIcon: {
     margin: "30px",
     "&:hover": {
-      color: theme.palette.primary.main
+      color: '#ff9800'
     }
   },
   copyrightText: {
@@ -146,13 +171,20 @@ const useStyles = makeStyles(theme => ({
   bio: {
     display: "block"
   },
-  actionButton: {}
+
+  overlay: {
+    background: 'rgba(255, 255, 255, 0.7)'
+  },
+  bioStyles: {
+    paddingTop: '20px'
+  }
 }));
 
 export default function Dashboard() {
   const classes = useStyles();
 
   return (
+
     <ThemeProvider theme={theme} className={classes.root}>
       <CssBaseline />
       <NavBar appBar={classes.appBar} />
@@ -167,18 +199,15 @@ export default function Dashboard() {
           <About
             id="about"
             bgOdd={classes.bgOdd}
+            bgEven={classes.bgEven}
             picStyles={classes.pic}
             skillsHeader={classes.skillsHeader}
             features={classes.features}
             chartStyles={classes.chartStyles}
-            bio={classes.bio}
+            bioStyles={classes.bioStyles}
           />
 
-          <Portfolio
-            id="portfolio"
-            imgStyles={classes.img}
-            bgEven={classes.bgEven}
-          />
+          <Portfolio id="portfolio" overlay={classes.overlay} imgStyles={classes.img} bgEven={classes.bgEven} />
 
           <Contact
             id="contact"
@@ -198,5 +227,6 @@ export default function Dashboard() {
         </Grid>
       </Container>
     </ThemeProvider>
+
   );
 }

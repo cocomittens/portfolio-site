@@ -4,7 +4,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 // Animations
 import Zoom from "react-reveal/Zoom";
 import Roll from "react-reveal/Roll";
@@ -34,9 +34,11 @@ export default function Intro(props) {
       </Grid>
       <Grid item xs={12}>
         <Rotate bottom right>
-          <Button className={actionButton} variant="outlined" color="primary">
+         
+          <Button color="secondary" startIcon={<KeyboardArrowDownIcon />} className={actionButton} variant="contained">
             See My Work
           </Button>
+    
         </Rotate>
       </Grid>
     </Grid>

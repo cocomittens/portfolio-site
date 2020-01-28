@@ -10,6 +10,7 @@ import {
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import Chip from '@material-ui/core/Chip';
 
 import Zoom from "react-reveal/Zoom";
 
@@ -50,15 +51,15 @@ const data = [
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active) {
+    const score = (<Chip size="small" label={payload[0].value} />);
+    const level= (<Chip size="small" label="novice" />);
     return (
       <Paper className="custom-tooltip">
         <Typography
-          variant="h6"
+          variant="subtitle1"
           className="label"
-        >{`${label}: ${payload[0].value}`}</Typography>
-        <Typography variant="body1" className="desc">
-          Anything you want can be displayed here.
-        </Typography>
+        >{`${label}: `}{score}</Typography>
+        {level}
       </Paper>
     );
   }
@@ -85,7 +86,7 @@ function Chart() {
         name="Skills"
         dataKey="level"
         stroke="#fff"
-        fill="#2773e1"
+        fill="#dc004e"
         fillOpacity={0.6}
       />
     </RadarChart>

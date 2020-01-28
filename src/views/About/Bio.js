@@ -7,10 +7,10 @@ import Typography from "@material-ui/core/Typography";
 import Zoom from "react-reveal/Zoom";
 
 export default function Experience(props) {
-  const { picStyles, pic } = props;
+  const { picStyles, pic, bgOdd, bioStyles } = props;
 
   return (
-    <Grid container item xs={8} justify="space-around" alignItems="center">
+    <Grid className={`${bgOdd} ${bioStyles}`} container item xs={12} justify="space-around" alignItems="center">
      <Grid item>
         <Zoom>
         <Avatar src={pic} alt="Corrie Stoddard" className={picStyles} /></Zoom>
