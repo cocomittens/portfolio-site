@@ -66,11 +66,9 @@ const theme = createMuiTheme({
     },
     MuiButton: {
       containedSecondary: {
-        backgroundColor: "#ffa101",
+    
         textShadow: "1px 1px 3px #999 ",
-        "&:hover": {
-          backgroundColor: "#ED9600"
-        }
+        
       },
       outlinedPrimary: {
         marginTop: "20px",
@@ -138,10 +136,10 @@ const useStyles = makeStyles(theme => ({
   },
   actionButton: {
     marginTop: "20px",
-    backgroundColor: '#ff9800',
-    color: '#ff11f',
+    backgroundColor: '#303030',
+    color: '#fff',
     "&:hover": {
-      backgroundColor: '#ff9800',
+      backgroundColor: '#303030',
     }
   },
   contactForm: {

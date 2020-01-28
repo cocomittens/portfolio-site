@@ -35,7 +35,7 @@ export default function Intro(props) {
       <Grid item xs={12}>
         <Rotate bottom right>
          
-          <Button color="secondary" startIcon={<KeyboardArrowDownIcon />} className={actionButton} variant="contained">
+          <Button startIcon={<KeyboardArrowDownIcon />} className={actionButton} variant="contained">
             See My Work
           </Button>
     

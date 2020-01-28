@@ -86,7 +86,7 @@ function Chart() {
         name="Skills"
         dataKey="level"
         stroke="#fff"
-        fill="#dc004e"
+        fill='#ff9800'
         fillOpacity={0.6}
       />
     </RadarChart>
